@@ -1,0 +1,58 @@
+<svg width="590" height="384" viewBox="0 0 590 384" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Glasses">
+    <g id="Border">
+        <path id="Rectangle 3" d="M72.5803 52.5779C76.8746 51.1615 82.9608 50.7489 90.6781 51.4441C98.3256 52.1329 107.237 53.8761 116.991 56.4865C136.495 61.7065 158.995 70.2939 180.823 80.378C202.645 90.4599 223.658 101.974 240.196 112.991C248.468 118.5 255.552 123.84 261.037 128.769C266.596 133.763 270.218 138.077 271.925 141.49C275.283 148.207 274.785 157.278 270.822 167.787C266.899 178.193 259.839 189.266 251.342 199.311C242.853 209.344 233.112 218.134 224.018 224.056C219.472 227.018 215.19 229.194 211.393 230.477C207.553 231.774 204.514 232.055 202.289 231.615C196.174 230.405 185.386 226.735 171.985 221.488C158.693 216.285 143.14 209.654 127.647 202.683C96.5192 188.676 66.1221 173.512 54.7255 165.866C50.3336 162.919 46.3402 155.681 43.8652 144.892C41.4521 134.374 40.7143 121.466 41.9465 108.545C43.1798 95.6135 46.3601 82.9454 51.5703 72.8131C56.7877 62.6668 63.8119 55.4699 72.5803 52.5779Z" stroke="black" stroke-width="9"/>
+        <path id="Rectangle 4" d="M544.481 262.737C542.542 258.527 538.585 253.629 532.656 248.241C526.781 242.903 519.227 237.312 510.434 231.663C492.853 220.368 470.634 209.044 447.76 199.226C424.89 189.41 401.499 181.156 381.606 175.955C371.656 173.354 362.659 171.537 355.086 170.657C347.414 169.766 341.593 169.886 337.791 170.868C330.345 172.791 323.856 179.18 318.695 189.112C313.578 198.96 310.138 211.626 308.477 224.705C306.819 237.769 306.974 250.958 308.844 261.759C309.779 267.159 311.123 271.843 312.808 275.574C314.509 279.341 316.434 281.862 318.374 283.292C323.581 287.129 333.91 292.862 347.233 299.513C360.452 306.113 376.329 313.477 392.42 320.567C424.738 334.809 457.449 347.742 471.214 351.294C476.61 352.686 484.922 350.864 494.784 345.59C504.422 340.437 514.692 332.434 523.593 322.939C532.503 313.435 539.848 302.642 543.862 292.005C547.876 281.368 548.423 271.302 544.481 262.737Z" stroke="black" stroke-width="9"/>
+        <path id="Vector 1" d="M356.463 168.95L258.912 125.518L276.661 152.317L322.837 172.876L356.463 168.95Z" fill="black"/>
+        <path id="Vector 2" d="M64.2124 42.3751L84.4185 51.3714L68.587 53.7711L54.5579 64.0596L45.1227 85.2514L41.2514 58.1352L64.2124 42.3751Z" fill="black"/>
+        <path id="Vector 3" d="M560.001 263.114L539.795 254.118L548.605 267.489L550.346 284.799L540.911 305.991L563.653 290.723L560.001 263.114Z" fill="black"/>
+    </g>
+    <g id="Text-left">
+        <rect id="Rectangle 5" x="87.9885" y="63.4415" width="123.545" height="8.57954" rx="4" transform="rotate(24 87.9885 63.4415)" fill="white" >
+            <animate attributeType="CSS" attributeName="opacity" values="1;0;1" dur="1.2s" repeatCount="indefinite" />
+        </rect>
+        <rect id="Rectangle 8" x="71.6874" y="94.3279" width="133.061" height="8.57954" rx="4" transform="rotate(24 71.6874 94.3279)" fill="#FF7788"> 
+        
+        </rect>
+        <rect id="Rectangle 6" x="80.267" y="78.8847" width="101.827" height="8.57954" rx="4" transform="rotate(24 80.267 78.8847)" fill="white"> 
+            <animate attributeType="CSS" attributeName="opacity" values="1;0;1" dur="1.4s" repeatCount="indefinite" />
+        </rect>
+        <rect id="Rectangle 9" x="98.8676" y="136.752" width="60.8051" height="8.57954" rx="4" transform="rotate(24 98.8676 136.752)" fill="white"> 
+            <animate attributeType="CSS" attributeName="opacity" values="1;0;1" dur="2.5s" repeatCount="indefinite" />
+        </rect>
+        <rect id="Rectangle 7" x="176.358" y="121.782" width="36.4176" height="8.57954" rx="4" transform="rotate(24 176.358 121.782)" fill="#90CCF4"> 
+        
+        </rect>
+        <rect id="Rectangle 10" x="62.2499" y="120.066" width="36.4176" height="8.57954" rx="4" transform="rotate(24 62.2499 120.066)" fill="#90CCF4"> 
+        
+        </rect>
+        <rect id="Rectangle 11" x="57.1022" y="132.936" width="36.4176" height="8.57954" rx="4" transform="rotate(24 57.1022 132.936)" fill="#FF7788"> 
+        
+        </rect>
+    </g>
+    <g id="Text-right">
+        <rect id="Rectangle 5_2" x="352.238" y="184.413" width="80.2795" height="8.57954" rx="4" transform="rotate(24 352.238 184.413)" fill="white"> 
+            <animate attributeType="CSS" attributeName="opacity" values="1;0;1" dur="1.8s" repeatCount="indefinite" />
+        </rect>
+        <rect id="Rectangle 8_2" x="335.937" y="215.299" width="133.061" height="8.57954" rx="4" transform="rotate(24 335.937 215.299)" fill="white"> 
+            <animate attributeType="CSS" attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite" />
+        </rect>
+        <rect id="Rectangle 6_2" x="344.516" y="199.856" width="101.827" height="8.57954" rx="4" transform="rotate(24 344.516 199.856)" fill="#FF7788"> 
+        
+        </rect>
+        <rect id="Rectangle 9_2" x="363.117" y="257.723" width="60.8051" height="8.57954" rx="4" transform="rotate(24 363.117 257.723)" fill="white"> 
+            <animate attributeType="CSS" attributeName="opacity" values="1;0;1" dur="2.2s" repeatCount="indefinite" />
+        </rect>
+        <rect id="Rectangle 7_2" x="427.738" y="218.731" width="36.4176" height="8.57954" rx="4" transform="rotate(24 427.738 218.731)" fill="#90CCF4"> 
+        
+        </rect>
+        <rect id="Rectangle 10_2" x="326.5" y="241.038" width="36.4176" height="8.57954" rx="4" transform="rotate(24 326.5 241.038)" fill="#FF7788"> 
+        
+        </rect>
+        <rect id="Rectangle 11_2" x="321.352" y="253.907" width="36.4176" height="8.57954" rx="4" transform="rotate(24 321.352 253.907)" fill="#FF7788"> 
+        
+        </rect>
+    </g>
+</g>
+</svg>
+
