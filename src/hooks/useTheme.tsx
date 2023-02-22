@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { darkTheme, lightTheme, ITheme } from '../styles/theme';
 
-export const useTheme = (initialValue:string) : [ITheme,React.Dispatch<any>] => {
+export const useTheme = (initialValue:string) : [ITheme,string,() => void] => {
     const [theme, setTheme] = useState(initialValue);
     const isDarkTheme = theme === "dark";
     const toggleTheme = () => {
@@ -22,5 +22,5 @@ export const useTheme = (initialValue:string) : [ITheme,React.Dispatch<any>] => 
     }, []);
 
     const chosenTheme : ITheme = isDarkTheme ? darkTheme : lightTheme;
-    return [chosenTheme, setTheme];
+    return [chosenTheme, theme, toggleTheme];
 }

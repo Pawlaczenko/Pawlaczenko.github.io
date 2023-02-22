@@ -6,22 +6,25 @@ import Header from "./layout/Header/Header"
 import HomePage from "./pages/HomePage"
 import GlobalStyles from "./styles/globalStyles";
 import { useTheme } from './hooks/useTheme';
+import { ThemeContext } from "./context/ThemeContext";
 
 function App() {
-  const [theme, setTheme] = useTheme("light");
+  const [theme, themeName, toggleTheme] = useTheme("light");
   
   return (
     <ThemeProvider theme={theme}>
-      <div className="App">
-        <GlobalStyles />
-        <BrowserRouter>
-          <Header />
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-          </Routes>
-          <Footer />
-        </BrowserRouter>
-      </div>
+      <ThemeContext.Provider value={{themeName, toggleTheme}}>
+        <div className="App">
+          <GlobalStyles />
+          <BrowserRouter>
+            <Header />
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+            </Routes>
+            <Footer />
+          </BrowserRouter>
+        </div>
+      </ThemeContext.Provider>
     </ThemeProvider>
   )
 }
