@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { BREAKPOINTS } from '../../styles/variables';
 
 const StyledIcon = styled.figure`
   & > svg {
@@ -11,6 +12,10 @@ const StyledIcon = styled.figure`
 
     &:hover {
         fill: ${(props) => props.theme.text};
+    }
+
+    @media only screen and (${BREAKPOINTS.navigation}){
+      --icon-size: 4.5rem;
     }
   }
 `;

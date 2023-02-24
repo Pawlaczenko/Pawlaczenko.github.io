@@ -12,7 +12,7 @@ interface ISectionProps {
 
 export const StyledSection = styled.section<ISectionProps>`
     display: grid;
-    grid-template-columns: 1fr min(var(--website-width),95%) 1fr;
+    grid-template-columns: 1fr min(var(--website-width),90%) 1fr;
 
     & > * {
       grid-column: ${(props) => props.bleed || BleedOptions.center};

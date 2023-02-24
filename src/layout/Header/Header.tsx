@@ -1,18 +1,23 @@
 import React, { FC } from 'react'
 import styled from 'styled-components';
 import GithubIcon, { StyledGithubIcon } from '../../components/GithubIcon/GithubIcon';
-import ThemeToggler, { StyledThemeToggler } from '../../components/ThemeToggler/ThemeToggler';
+import ThemeToggler, { StyledToggleButton } from '../../components/ThemeToggler/ThemeToggler';
 import { flexSpaceBetween } from '../../styles/mixins';
 import StyledSection from '../Section/Section';
 import Navigation, { StyledNavigation } from './Navigation';
+import { useState } from 'react';
+import Burger from '../../components/Burger/Burger';
 
 const Header : FC = () => {
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+  
   return (
     <Wrapper as={"header"}>
       <StyledHeader>
-        <Navigation />
+        <Navigation isOpen={isOpen} />
         <ThemeToggler />
         <GithubIcon />
+        <Burger isOpen={isOpen} handleClick={()=>setIsOpen(!isOpen)} />
       </StyledHeader>
     </Wrapper>
   )
@@ -26,10 +31,9 @@ const StyledHeader = styled.div`
   ${flexSpaceBetween};
   position: relative;
 
-  & > ${StyledThemeToggler} {
+  & > ${StyledToggleButton} {
     position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    left: calc(45%);
   }
 
 `;

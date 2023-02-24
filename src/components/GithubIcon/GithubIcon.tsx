@@ -13,7 +13,7 @@ const GithubIcon : FC = () => {
 }
 
 export const StyledGithubIcon = styled(StyledIcon)`
-    
+    z-index: 51;
 `;
 
 export default GithubIcon
