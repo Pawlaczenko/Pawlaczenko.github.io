@@ -1,7 +1,9 @@
 import { FC } from 'react'
 import styled from 'styled-components';
+import BlackBox from '../../components/BlackBox/BlackBox';
 import Heading from '../../components/Heading/Heading';
 import Paragraph from '../../components/Paragraph/Paragraph';
+import { flexCenter, flexStart } from '../../styles/mixins';
 import StyledSection from '../Section/Section';
 
 const HeroSection : FC = () => {
@@ -13,7 +15,7 @@ const HeroSection : FC = () => {
             <Paragraph grey>Skupiam się na tworzeniu stron internetowych, które nie tylko wyglądają dobrze, ale również działają sprawnie i szybko.</Paragraph>
         </StyledColumn>
         <StyledColumn>
-            <Heading>Hello</Heading>
+            <BlackBox big />
         </StyledColumn>
       </StyledHeroSection>
     </Wrapper>
@@ -32,6 +34,12 @@ const StyledHeroSection = styled.div`
 `;
 
 const StyledColumn = styled.div`
+  width: 100%;
+  height: 100%;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   & > ${Paragraph} {
     margin-top: 2rem;
     width: 80%;

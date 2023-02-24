@@ -35,4 +35,5 @@ export const variables = css`
 
 export const BREAKPOINTS = {
     navigation: "max-width:800px",
+    remToggle: "max-width:93.75em"
 }

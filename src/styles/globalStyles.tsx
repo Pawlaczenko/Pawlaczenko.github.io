@@ -1,6 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 import { reset } from "./reset";
-import { variables } from "./variables";
+import { BREAKPOINTS, variables } from "./variables";
 import { ITheme } from './theme';
 
 const GlobalStyles = createGlobalStyle<{theme: ITheme}>`
@@ -10,7 +10,7 @@ const GlobalStyles = createGlobalStyle<{theme: ITheme}>`
     html {
         font-size: 62.5%;
 
-        @media only screen and (max-width: 93.75em){
+        @media only screen and (${BREAKPOINTS.remToggle}){
             font-size: 50%;
         }
     }
