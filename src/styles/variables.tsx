@@ -7,11 +7,16 @@ export const variables = css`
         --color-black: #000;
         --color-dark: #271E1E;
         --color-light: #e1e6e1;
+        --color-grey: #6a6a6a;
 
         --color-orange-1: #f85a3e;
         --color-orange-2: #ff7733;
         --color-orange-3: #e15634;
         --color-orange-4: #e63b2e;
+
+        //GRADIENTS
+
+        --gradient-orange: repeating-linear-gradient(to right, var(--color-orange-1),var(--color-orange-2) 25%,var(--color-orange-3) 25%,var(--color-orange-4) 25%);
 
         // TYPOGRAPHY
         --fs-heading: 5.5rem;
