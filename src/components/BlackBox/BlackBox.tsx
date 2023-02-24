@@ -1,23 +1,19 @@
-import React from 'react'
 import { FC } from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { flexCenter } from '../../styles/mixins';
 import Corner from './Corner';
 import { CornerPositions } from './Corner';
-import useMediaQuery from '../../hooks/useMediaQuery';
-import { BREAKPOINTS } from '../../styles/variables';
 
 interface IBlackBoxProps {
     big?: boolean,
 }
 
 const BlackBox : FC<IBlackBoxProps> = ({big}) => {
-  const isBelowRemToggle = useMediaQuery(`(${BREAKPOINTS.remToggle})`);
   return (
     <StyledBox big={big}>
-        <Corner big={big} position={CornerPositions.BottomRight} isBelowRemToggle={isBelowRemToggle}/>
-        <Corner big={big} position={CornerPositions.TopLeft} isBelowRemToggle={isBelowRemToggle}/>
+        <Corner big={big} position={CornerPositions.BottomRight} />
+        <Corner big={big} position={CornerPositions.TopLeft} />
     </StyledBox>
   )
 }
