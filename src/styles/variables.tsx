@@ -1,5 +1,12 @@
 import { css } from "styled-components";
 
+export const BREAKPOINTS = {
+    large: "max-width:980px",
+    navigation: "max-width:800px",
+    phone: "max-width:650px",
+    remToggle: "max-width:93.75em"
+}
+
 export const variables = css`
     html {
         //COLORS
@@ -30,10 +37,9 @@ export const variables = css`
 
         // SPACES
         --website-width: 120rem;
+
+        @media only screen and (${BREAKPOINTS.large}) {
+            --fs-heading: 4rem;
+        }
     }
 `;
-
-export const BREAKPOINTS = {
-    navigation: "max-width:800px",
-    remToggle: "max-width:93.75em"
-}

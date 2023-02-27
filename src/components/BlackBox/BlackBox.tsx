@@ -7,20 +7,24 @@ import { CornerPositions } from './Corner';
 
 interface IBlackBoxProps {
     big?: boolean,
+    corners: Array<CornerPositions>,
+    children: React.ReactNode
 }
 
-const BlackBox : FC<IBlackBoxProps> = ({big}) => {
+const BlackBox : FC<IBlackBoxProps> = ({big, corners,children}) => {
   return (
     <StyledBox big={big}>
-        <Corner big={big} position={CornerPositions.BottomRight} />
-        <Corner big={big} position={CornerPositions.TopLeft} />
+        {
+          corners.map(corner => <Corner big={big} position={corner} />)
+        }
+        {children}
     </StyledBox>
   )
 }
 
 const StyledBox = styled(motion.figure)<{big?: boolean}>`
     --box-size: ${(props) => props.big ? "50rem" : "20.8rem"};
-    --min-box-size: 30vw;
+    --min-box-size: 50vw;
     
     background-color: ${({theme}) => theme.box};
     color: ${({theme}) => theme.accents};
@@ -29,7 +33,14 @@ const StyledBox = styled(motion.figure)<{big?: boolean}>`
     width: min(var(--min-box-size), var(--box-size));
     height: min(var(--min-box-size),var(--box-size));
     position: relative;
+    
     ${flexCenter};
+
+    & > svg {
+      --icon-size: 75%;
+      width: var(--icon-size);
+      height: var(--icon-size);
+    }
 `;
 
 export default BlackBox

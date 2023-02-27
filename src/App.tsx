@@ -7,6 +7,8 @@ import HomePage from "./pages/HomePage"
 import GlobalStyles from "./styles/globalStyles";
 import { useTheme } from './hooks/useTheme';
 import { ThemeContext } from "./context/ThemeContext";
+import styled from 'styled-components';
+import orb from './assets/back-orb.svg';
 
 function App() {
   const [theme, themeName, toggleTheme] = useTheme("light");
@@ -14,7 +16,7 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <ThemeContext.Provider value={{themeName, toggleTheme}}>
-        <div className="App">
+        <StyledAppWrapper>
           <GlobalStyles />
           <BrowserRouter>
             <Header />
@@ -23,10 +25,16 @@ function App() {
             </Routes>
             <Footer />
           </BrowserRouter>
-        </div>
+        </StyledAppWrapper>
       </ThemeContext.Provider>
     </ThemeProvider>
   )
 }
+
+const StyledAppWrapper = styled.div`
+  background: 
+    url(${orb}) top -20vw left -20vw / 60vw no-repeat,
+    url(${orb}) top -20vw right -20vw / 50vw no-repeat;
+`;
 
 export default App
