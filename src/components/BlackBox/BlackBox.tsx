@@ -15,14 +15,14 @@ const BlackBox : FC<IBlackBoxProps> = ({big, corners,children}) => {
   return (
     <StyledBox big={big}>
         {
-          corners.map(corner => <Corner big={big} position={corner} />)
+          corners.map((corner,index) => <Corner big={big} position={corner} key={index} />)
         }
         {children}
     </StyledBox>
   )
 }
 
-const StyledBox = styled(motion.figure)<{big?: boolean}>`
+export const StyledBox = styled(motion.figure)<{big?: boolean}>`
     --box-size: ${(props) => props.big ? "50rem" : "20.8rem"};
     --min-box-size: 50vw;
     
@@ -41,6 +41,8 @@ const StyledBox = styled(motion.figure)<{big?: boolean}>`
       width: var(--icon-size);
       height: var(--icon-size);
     }
+
+    font-size: var(--fs-subheading);
 `;
 
 export default BlackBox

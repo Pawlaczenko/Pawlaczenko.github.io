@@ -17,6 +17,15 @@ interface ICornerProps {
 const bigPath : string = "M30 150V37C30 33.134 33.134 30 37 30H150";
 const smallPath: string = "M16 66V23C16 19.134 19.134 16 23 16H66";
 
+const cornerPath = {
+    hidden: {
+        pathLength: 0,
+    },
+    visible: {
+        pathLength: 1,
+    }
+}
+
 const Corner : FC<ICornerProps> = ({position,big}) => {  
   const strokeWidth = big ? 60 : 32;
   const cornerSize = big ? 180 : 82;
@@ -25,7 +34,16 @@ const Corner : FC<ICornerProps> = ({position,big}) => {
   return (
     <StyledCornerPositioner big={big} rotate={position}>
         <StyledCorner width={cornerSize} height={cornerSize} viewBox={`0 0 ${cornerSize} ${cornerSize}`} fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d={dPath} stroke="url(#paint0_linear_1_6)" strokeOpacity="0.9" strokeWidth={strokeWidth} strokeLinecap="round"/>
+            <motion.path 
+                d={dPath} 
+                stroke="url(#paint0_linear_1_6)" 
+                strokeOpacity="0.9" 
+                strokeWidth={strokeWidth} 
+                strokeLinecap="round" 
+                variants={cornerPath} 
+                initial="hidden" 
+                animate="visible"
+                transition={{duration: 1.2, type: 'tween', ease: [0.2,0.2,0.5,0.95]}}/>
             <defs>
                 <linearGradient id="paint0_linear_1_6" x1="90" y1="30" x2="90" y2="150" gradientUnits="userSpaceOnUse">
                     <stop stopColor="#F85A3E"/>

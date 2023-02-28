@@ -4,6 +4,7 @@ export const BREAKPOINTS = {
     large: "max-width:980px",
     navigation: "max-width:800px",
     phone: "max-width:650px",
+    projectItem: "max-width:500px",
     remToggle: "max-width:93.75em"
 }
 
@@ -24,6 +25,7 @@ export const variables = css`
         //GRADIENTS
 
         --gradient-orange: repeating-linear-gradient(to right, var(--color-orange-1),var(--color-orange-2) 25%,var(--color-orange-3) 25%,var(--color-orange-4) 25%);
+        --gradient-orange-radial: radial-gradient(var(--color-orange-2),var(--color-orange-1));
 
         // TYPOGRAPHY
         --fs-heading: 5.5rem;

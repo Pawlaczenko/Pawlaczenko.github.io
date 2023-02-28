@@ -1,11 +1,13 @@
 import React, { FC } from 'react'
 import HeroSection from '../layout/HeroSection/HeroSection'
+import ProductsSection from '../layout/ProjectsSection/ProjectsSection'
 
 const HomePage : FC = () => {
   return (
-    <div>
-      <HeroSection />      
-    </div>
+    <>
+      <HeroSection />
+      <ProductsSection />      
+    </>
   )
 }
 

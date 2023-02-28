@@ -32,6 +32,7 @@ function App() {
 }
 
 const StyledAppWrapper = styled.div`
+  overflow-x: hidden;
   background: 
     url(${orb}) top -20vw left -20vw / 60vw no-repeat,
     url(${orb}) top -20vw right -20vw / 50vw no-repeat;

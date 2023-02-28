@@ -48,9 +48,6 @@ const StyledHeroSection = styled.div`
 `;
 
 const StyledColumn = styled.div<{end?: boolean}>`
-  width: 100%;
-  height: 100%;
-  
   display: flex;
   flex-direction: column;
   justify-content: center;
