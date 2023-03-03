@@ -19,6 +19,7 @@ const Heading : FC<IHeadingProps> = ({children, primary}) => {
 export const StyledHeading = styled(motion.h1)<{primary?: boolean}>`
     font-family: var(--ff-heading);
     font-size: ${(props) => props.primary ? "var(--fs-heading)" : "var(--fs-subheading)"};
+    text-align: ${(props) => props.primary ? "unset" : "center"};
     letter-spacing: .1rem;
     
     & mark {

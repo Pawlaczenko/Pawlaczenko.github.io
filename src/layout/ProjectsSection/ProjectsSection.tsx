@@ -28,7 +28,6 @@ const Wrapper = styled(StyledSection)`
 
 const StyledProductsSection = styled.div`
     & > ${StyledHeading} {
-        text-align: center;
         position: relative;
 
         &::before,

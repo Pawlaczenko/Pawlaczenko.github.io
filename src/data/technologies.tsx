@@ -13,7 +13,7 @@ import {
 export interface ITechnology {
     name: string,
     color?: string, // in HSL format: "x, x, x"
-    icon?: IconType
+    icon?: React.ReactNode
 }
 
 export type TechnologyKey = 
@@ -34,7 +34,7 @@ const TECHNOLOGIES = new Map<TechnologyKey, ITechnology>([
         {
             name: "REACT",
             color: "#61DBFB",
-            icon: SiReact
+            icon: <SiReact />
         }
     ],
     [
@@ -42,7 +42,7 @@ const TECHNOLOGIES = new Map<TechnologyKey, ITechnology>([
         {
             name: "JavaScript",
             color: "#FFD83A",
-            icon: SiJavascript
+            icon: <SiJavascript />
         }
     ],
     [
@@ -50,7 +50,7 @@ const TECHNOLOGIES = new Map<TechnologyKey, ITechnology>([
         {
             name: "TypeScript",
             color: "#2F72BC",
-            icon: SiTypescript
+            icon: <SiTypescript />
         }
     ],
     [
@@ -58,7 +58,7 @@ const TECHNOLOGIES = new Map<TechnologyKey, ITechnology>([
         {
             name: "styled components",
             color: "#D2698B",
-            icon: SiStyledcomponents
+            icon: <SiStyledcomponents />
         }
     ],
     [
@@ -66,7 +66,7 @@ const TECHNOLOGIES = new Map<TechnologyKey, ITechnology>([
         {
             name: "CSS/SCSS",
             color: "#33A9DC",
-            icon: SiCss3
+            icon: <SiCss3 />
         }
     ],
     [
@@ -74,7 +74,7 @@ const TECHNOLOGIES = new Map<TechnologyKey, ITechnology>([
         {
             name: "node.js",
             color: "#83CD29",
-            icon: SiNodedotjs
+            icon: <SiNodedotjs />
         }
     ],
     [
@@ -82,7 +82,7 @@ const TECHNOLOGIES = new Map<TechnologyKey, ITechnology>([
         {
             name: "HTML",
             color: "#F1662A",
-            icon: SiHtml5
+            icon: <SiHtml5 />
         }
     ],
     [
@@ -101,7 +101,7 @@ const TECHNOLOGIES = new Map<TechnologyKey, ITechnology>([
         "sass",
         {
             name: "Sass",
-            icon: SiSass
+            icon: <SiSass />
         }
     ],
 ]) ;
