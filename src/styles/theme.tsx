@@ -8,7 +8,8 @@ export interface ITheme {
     text: string,
     box: string,
     accents: string,
-    paragraph: string
+    paragraph: string,
+    shadow: string
 }
 
 export const lightTheme : ITheme = {
@@ -16,7 +17,8 @@ export const lightTheme : ITheme = {
     text: 'var(--color-black)',
     box: 'var(--color-black)',
     accents: 'var(--color-light)',
-    paragraph: 'var(--color-grey)'
+    paragraph: 'var(--color-grey)',
+    shadow: '0,0,0'
   };
   
   export const darkTheme : ITheme = {
@@ -24,5 +26,6 @@ export const lightTheme : ITheme = {
     text: 'var(--color-white)',
     box: 'var(--color-light)',
     accents: 'var(--color-black)',
-    paragraph: 'var(--color-white)'
+    paragraph: 'var(--color-white)',
+    shadow: '255,255,255'
   };

@@ -5,7 +5,7 @@ const Button = styled.button`
     border: none;
     background: var(--gradient-orange-radial);
     color: white;
-    font-weight: bold;
+    font-weight: var(--fw-bold);
     text-align: center;
     padding: .3rem 1rem;
     min-width: 10rem;
@@ -33,6 +33,15 @@ const Button = styled.button`
 
       &:before{
         top: 0;
+      }
+    }
+
+    &:disabled {
+      background: var(--color-grey);
+      opacity: 0.5;
+      cursor: default;
+      &:before {
+        opacity: 0.5;
       }
     }
 `;
