@@ -4,9 +4,9 @@ import { LINKS } from '../../data/links';
 import StyledIcon from '../../components/Icon/Icon';
 import styled from 'styled-components';
 
-const GithubIcon : FC = () => {
+const GithubIcon : FC<{fillColor?:string}> = ({fillColor}) => {
   return (
-    <StyledGithubIcon as="a" target="_blank" href={LINKS.get("github")}>
+    <StyledGithubIcon fillColor={fillColor} as="a" target="_blank" href={LINKS.get("github")}>
         <GoMarkGithub />
     </StyledGithubIcon>
   )

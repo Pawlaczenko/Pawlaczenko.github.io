@@ -9,7 +9,7 @@ const Footer : FC = () => {
   return (
     <Wrapper as="footer">
       <StyledFooter>
-        <GithubIcon />
+        <GithubIcon fillColor='black' />
         <Paragraph><b>&copy; 2023 Bartłomiej Pawlak</b></Paragraph>
       </StyledFooter>
     </Wrapper>
@@ -26,6 +26,10 @@ const StyledFooter = styled.div`
   ${flexCenter};
   flex-direction: column;
   gap: 1rem;
+
+  & > ${Paragraph}{
+    color: black;
+  }
 `;
 
 export default Footer

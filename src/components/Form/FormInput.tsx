@@ -66,6 +66,7 @@ const StyledInput = styled.input<IStyledInputProps>`
 
 const StyledWarning = styled(ValidationError)`
   color: var(--color-orange-4);
+  text-align: center;
 `;
 
 export default FormInput
