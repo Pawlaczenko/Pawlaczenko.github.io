@@ -10,14 +10,14 @@ interface ITechBarProps {
 }
 
 const TechBar : FC<ITechBarProps> = ({technologies}) => {
-	const getTechItem = (key : TechnologyKey) : React.ReactNode => {
+	const getTechItem = (key : TechnologyKey,index:number) : React.ReactNode => {
     const tech = TECHNOLOGIES.get(key);
-    return <TechBubble name={tech?.name || ""} color={tech?.color} icon={tech?.icon} />;
+    return <TechBubble name={tech?.name || ""} color={tech?.color} icon={tech?.icon} key={index} />;
   }
   return (
     <TechsList>
 		{
-			technologies.map(tech => getTechItem(tech))
+			technologies.map((tech,index) => getTechItem(tech,index))
 		}
 	</TechsList>
   )

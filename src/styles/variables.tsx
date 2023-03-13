@@ -37,6 +37,10 @@ export const variables = css`
         --ff-heading: 'Gloock', serif;
         --ff-text: 'Montserrat', sans-serif;
 
+        --fw-black: 800;
+        --fw-bold: 600;
+        --fw-normal: 400;
+
         // SPACES
         --website-width: 120rem;
 

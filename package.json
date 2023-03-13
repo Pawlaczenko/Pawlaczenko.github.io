@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@formspree/react": "^2.4.1",
     "@types/react-router-dom": "5.3.3",
     "@types/styled-components": "^5.1.26",
     "framer-motion": "^9.0.7",

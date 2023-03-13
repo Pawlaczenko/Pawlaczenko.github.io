@@ -38,7 +38,7 @@ const StyledTechnologiesList = styled.ul<{isLeft: boolean}>`
 `
 
 const TechListItem = styled.li<{color?:string, isLeft: boolean}>`
-  font-weight: 700;
+  font-weight: var(--fw-bold);
   position: relative;
 
   @media only screen and (${BREAKPOINTS.projectItem}){

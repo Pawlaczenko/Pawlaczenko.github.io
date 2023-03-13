@@ -7,7 +7,6 @@ const getLettersCount = (word:string) : number => {
 	return Math.max(...(word.split(" ").map(el => el.length)));
 }
 
-
 const TechBubble : FC<ITechnology> = ({name,color,icon}) => {
   const noOfLetters : number = getLettersCount(name || "");
   return (
@@ -24,7 +23,7 @@ const StyledTechBubble = styled.li<{color?: string,noOfLetters: number}>`
 	height: min(40vw, var(--item-size));
 
 	text-align: center;
-	font-weight: 800;
+	font-weight: var(--fw-black);
 	font-size: calc((var(--item-size) / ${props=>props.noOfLetters}));
   	color: black;
 

@@ -5,11 +5,17 @@ import ThemeToggler, { StyledToggleButton } from '../../components/ThemeToggler/
 import { flexSpaceBetween } from '../../styles/mixins';
 import StyledSection from '../Section/Section';
 import Navigation, { StyledNavigation } from './Navigation';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Burger from '../../components/Burger/Burger';
+import { useLocation } from 'react-router-dom';
 
 const Header : FC = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
+  const location = useLocation();
+
+  useEffect(()=>{
+    setIsOpen(false);
+  },[location.pathname,location.hash])
   
   return (
     <Wrapper as={"header"}>
