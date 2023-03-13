@@ -1,21 +1,26 @@
 import { motion } from 'framer-motion';
 import { FC } from 'react'
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import styled from 'styled-components'
 import { flexStart } from '../../styles/mixins';
 import { BREAKPOINTS } from '../../styles/variables';
 
 const Navigation : FC<{isOpen: boolean}> = ({isOpen}) => {
   const links : {name:string,id:string}[] = [
-    {id: "#projects", name:"Projekty"},
-    {id: "#about", name:"O mnie"},
-    {id: "#contact", name:"Kontakt"}
+    {id: "#projects", name: "Projekty"},
+    {id: "#about", name: "O mnie"},
+    {id: "#contact", name: "Kontakt"}
   ];
+
+  const location = useLocation();
+
   return (
     <StyledNavigation isOpen={isOpen} layout>
-        {
-          links.map(link => <StyledNavigationItem to={'/'+link.id} key={link.id} >{link.name}</StyledNavigationItem> )
-        }
+      {
+        location.pathname === '/' 
+        ? links.map(link => <StyledNavigationItem href={link.id} key={link.id} >{link.name}</StyledNavigationItem> )
+        : <StyledNavigationItem as={NavLink} to="/" >Home</StyledNavigationItem>
+      }
     </StyledNavigation>
   )
 }
@@ -40,7 +45,7 @@ export const StyledNavigation = styled(motion.nav)<{isOpen:boolean}>`
   }
 `
 
-const StyledNavigationItem = styled(NavLink)`
+const StyledNavigationItem = styled.a`
   font-size: var(--fs-paragraph);
   &:hover {
     color: var(--color-orange-2);

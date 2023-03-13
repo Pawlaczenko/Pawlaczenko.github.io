@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom"
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom"
 import { ThemeProvider } from "styled-components";
 import Footer from "./layout/Footer/Footer"
 import Header from "./layout/Header/Header"
@@ -9,6 +9,7 @@ import { useTheme } from './hooks/useTheme';
 import { ThemeContext } from "./context/ThemeContext";
 import styled from 'styled-components';
 import orb from './assets/back-orb.svg';
+import ProjectPage from './pages/ProjectPage';
 
 function App() {
   const [theme, themeName, toggleTheme] = useTheme("light");
@@ -21,7 +22,9 @@ function App() {
           <BrowserRouter>
             <Header />
             <Routes>
-              <Route path="/" element={<HomePage />} />
+              <Route index element={<HomePage />} />
+              <Route path="/project/:id" element={<ProjectPage />} />
+              <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
             <Footer />
           </BrowserRouter>

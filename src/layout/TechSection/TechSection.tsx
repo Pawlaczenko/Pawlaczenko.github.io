@@ -10,7 +10,7 @@ import { BREAKPOINTS } from '../../styles/variables';
 const TechSection : FC = () => {
   const technologies : TechnologyKey[] = ["react","ts","js","sc","node","html"];
   return (
-    <Wrapper>
+    <Wrapper id="about">
       <StyledTechSection>
         <Heading>moje <mark>technologie</mark></Heading>
         <TechBar technologies={technologies} />

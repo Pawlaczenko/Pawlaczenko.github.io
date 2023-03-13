@@ -9,7 +9,7 @@ import ContactImage from "../../assets/contact_background.svg";
 
 const ContactSection : FC = () => {
   return (
-    <Wrapper>
+    <Wrapper id="contact">
       <StyledContactSection>
         <Heading><mark>skontaktuj</mark> się ze mną</Heading>
         <Form />
