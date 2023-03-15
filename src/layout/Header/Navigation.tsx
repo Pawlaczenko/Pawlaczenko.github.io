@@ -1,11 +1,11 @@
-import { motion } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 import { FC } from 'react'
 import { NavLink, useLocation } from 'react-router-dom';
 import styled from 'styled-components'
 import { flexStart } from '../../styles/mixins';
 import { BREAKPOINTS } from '../../styles/variables';
 
-const Navigation : FC<{isOpen: boolean}> = ({isOpen}) => {
+const Navigation : FC<{isOpen: boolean,variants?:Variants}> = ({isOpen,variants}) => {
   const links : {name:string,id:string}[] = [
     {id: "#projects", name: "Projekty"},
     {id: "#about", name: "O mnie"},
@@ -15,7 +15,7 @@ const Navigation : FC<{isOpen: boolean}> = ({isOpen}) => {
   const location = useLocation();
 
   return (
-    <StyledNavigation isOpen={isOpen} layout>
+    <StyledNavigation variants={variants} isOpen={isOpen} layout>
       {
         location.pathname === '/' 
         ? links.map(link => <StyledNavigationItem href={link.id} key={link.id} >{link.name}</StyledNavigationItem> )

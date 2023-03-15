@@ -1,7 +1,8 @@
+import { motion } from "framer-motion";
 import styled from "styled-components";
 import { BREAKPOINTS } from "../../styles/variables";
 
-const Paragraph = styled.p<{grey?: boolean}>`
+const Paragraph = styled(motion.p)<{grey?: boolean}>`
     font-size: var(--fs-paragraph);
     color: ${(props) => props.grey ? props.theme.paragraph : props.theme.text};
 

@@ -43,7 +43,7 @@ const Corner : FC<ICornerProps> = ({position,big}) => {
                 variants={cornerPath} 
                 initial="hidden" 
                 animate="visible"
-                transition={{duration: 1.2, type: 'tween', ease: [0.2,0.2,0.5,0.95]}}/>
+                transition={{duration: 2,delay: .5, type: 'tween', ease: [0.6,0.01,-0.05,0.95]}}/>
             <defs>
                 <linearGradient id="paint0_linear_1_6" x1="90" y1="30" x2="90" y2="150" gradientUnits="userSpaceOnUse">
                     <stop stopColor="#F85A3E"/>

@@ -7,18 +7,20 @@ import { CornerPositions } from '../BlackBox/Corner';
 import TechnologiesList from './TechnologiesList';
 import Button from '../Button/Button';
 import { BREAKPOINTS } from '../../styles/variables';
+import { motion, Variants } from 'framer-motion';
 
 interface IProjectItem {
     index: number,
-    project: IProject
+    project: IProject,
+    variants?: Variants
 }
 
-const ProjectItem : FC<IProjectItem> = ({index,project}) => {
+const ProjectItem : FC<IProjectItem> = ({index,project,variants}) => {
     const isLeft : boolean = index % 2 === 0;
     const cornerPosition : CornerPositions = isLeft ? CornerPositions.TopLeft : CornerPositions.TopRight;
 
     return (
-    <StyledProjectItem isLeft={isLeft}>
+    <StyledProjectItem variants={variants} isLeft={isLeft}>
         <BlackBox corners={[cornerPosition]}>{project.name}</BlackBox>
         <StyledProjectInfo>
             <StyledProjectDescription isLeft={isLeft}>
@@ -34,7 +36,7 @@ const ProjectItem : FC<IProjectItem> = ({index,project}) => {
   )
 }
 
-const StyledProjectItem = styled.li<{isLeft: boolean}>`
+const StyledProjectItem = styled(motion.li)<{isLeft: boolean,variants?:Variants}>`
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;

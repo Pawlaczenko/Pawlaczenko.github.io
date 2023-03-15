@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import styled from 'styled-components';
-import { motion } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 import { flexCenter } from '../../styles/mixins';
 import Corner from './Corner';
 import { CornerPositions } from './Corner';
@@ -8,12 +8,15 @@ import { CornerPositions } from './Corner';
 interface IBlackBoxProps {
     big?: boolean,
     corners: Array<CornerPositions>,
-    children: React.ReactNode
+    children: React.ReactNode,
+    variants?: Variants
 }
 
-const BlackBox : FC<IBlackBoxProps> = ({big, corners,children}) => {
+//initial={{scale: 0, opacity:0}} animate={{scale: 1,opacity:1, transition:{ease:"easeInOut",duration:1.6}}}
+
+const BlackBox : FC<IBlackBoxProps> = ({big, corners,children,variants}) => {
   return (
-    <StyledBox big={big}>
+    <StyledBox big={big} variants={variants}>
         {
           corners.map((corner,index) => <Corner big={big} position={corner} key={index} />)
         }

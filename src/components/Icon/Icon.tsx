@@ -1,7 +1,8 @@
+import { motion, Variants } from 'framer-motion';
 import styled from 'styled-components';
 import { BREAKPOINTS } from '../../styles/variables';
 
-const StyledIcon = styled.figure<{fillColor?:string}>`
+const StyledIcon = styled(motion.figure)<{fillColor?:string}>`
   & > svg {
     --icon-size: 3rem;
 

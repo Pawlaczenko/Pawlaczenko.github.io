@@ -1,4 +1,5 @@
 import { IconType } from "react-icons/lib";
+import { Variants } from 'framer-motion';
 import { 
     SiReact,
     SiJavascript,
@@ -12,8 +13,9 @@ import {
 
 export interface ITechnology {
     name: string,
-    color?: string, // in HSL format: "x, x, x"
-    icon?: React.ReactNode
+    color?: string, // in #xxxxxx format
+    icon?: React.ReactNode,
+    variants?: Variants
 }
 
 export type TechnologyKey = 
