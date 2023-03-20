@@ -12,10 +12,10 @@ const TechSection : FC = () => {
   return (
     <Wrapper id="about">
       <StyledTechSection>
-        <Heading>moje <mark>technologie</mark></Heading>
+        <Heading>about <mark>technologies</mark></Heading>
         <TechBar technologies={technologies} />
         <Paragraph>
-          Mój główny edytor kodu to <b>Visual Studio Code</b>. Do projektowania interfejsów użytkownika korzystam z programów takich jak <b>Figma</b> i <b>Adobe XD</b>, znam także <b>Adobe Photoshop</b>. Jestem dobrze zaznajomiony z narzędziem kontroli wersji <b>git</b>, oraz praktykami pracy zespołowej wykorzystującymi <b>GitHub</b>. W trakcie tworzenia stron korzystam z narzędzi takich jak <b>npm</b>, <b>vite</b> oraz <b>webpack</b>.
+        My main code editor is <b>Visual Studio Code</b>. I use programs like <b>Figma</b> and <b>Adobe XD</b> to design user interfaces, and I'm familiar with <b>Adobe Photoshop</b>. I am well acquainted with the version control tool <b>git</b>, and teamwork practices using <b>GitHub</b>. I use tools like <b>npm</b>, <b>vite</b>, and <b>webpack</b> when creating pages.
         </Paragraph>
       </StyledTechSection>
     </Wrapper>

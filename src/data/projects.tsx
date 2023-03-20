@@ -14,7 +14,7 @@ const PROJECTS : IProject[] = [
         name: "Tempo",
         githubLink: "https://github.com/Pawlaczenko/Tempo-react",
         liveLink: "https://tempo-react.netlify.app/",
-        shortDescription: "Sprawdź swoją szybkość pisania za pomocą tekstów piosenek.",
+        shortDescription: "Test your typing speed with your favourite songs.",
         technologies: ["react","sc","node","router"]
     },
     {
@@ -22,14 +22,14 @@ const PROJECTS : IProject[] = [
         name: "Cafe Street",
         githubLink: "https://github.com/Pawlaczenko/cafe-street",
         liveLink: "https://cafe-street.netlify.app/",
-        shortDescription: "Landing Page dla kawiarni Cafe Street",
+        shortDescription: "A landing page for Cafe Street.",
         technologies: ["react","ts","sc"]
     },
     {
         id: "czytnik",
         name: "Czytnik",
         githubLink: "https://github.com/Pawlaczenko/Czytnik",
-        shortDescription: "Sklep Internetowy dla Księgarni Czytnik",
+        shortDescription: "An online shop for the Czytnik bookstore.",
         technologies: ["asp","sass","efc"]
     },
     {
@@ -37,7 +37,7 @@ const PROJECTS : IProject[] = [
         name: "Earthly",
         githubLink: "https://github.com/Pawlaczenko/Earthly",
         liveLink: "https://pawlaczenko.github.io/Earthly/",
-        shortDescription: "Strona Internetowa dla organizacji ekologicznej",
+        shortDescription: "Website for an ecological organization.",
         technologies: ["html","css","js"]
     },
 ];
@@ -54,19 +54,53 @@ export const PROJECTS_ARTICLES = new Map<string,IProjectArticle>([
             photoPath: "miniature-tempo.jpg",
             article: `
                 <p>
-                Napisanie aplikacji Tempo stanowiło dla mnie wyzwanie, ale jednocześnie okazało się bardzo interesującym projektem, który pozwolił na lepsze poznanie React.js oraz Node.js. Było to ciekawe doświadczenie, zwłaszcza że to moje drugie podejście do napisania tej aplikacji, tym razem w oparciu o React.js i Node.js. Wcześniejsza wersja ( <a href="https://github.com/Pawlaczenko/Tempo">kod źródłowy</a> ) została napisana przy użyciu własnoręcznie skonfigurowanego webpacka, HTML, SCSS i Javascript, a kolejna wersja miała na celu doskonalenie umiejętności programowania w React.js oraz dodanie backendu, który w poprzedniej wersji aplikacji pozostawiał wiele do życzenia.</p>
-                <p>
-                W pierwszej kolejności, przystąpiłem do dokładnego zaprojektowania aplikacji. Zdecydowałem, jak będzie wyglądać front-end, a także jakie funkcjonalności powinny zostać zaimplementowane w backendzie. Dzięki temu udało mi się napisać front-end aplikacji z użyciem React.js oraz biblioteki styled-components do stylowania interfejsu użytkownika. Wykorzystanie tej biblioteki pozwoliło na łatwe zarządzanie stylami, a także na zapewnienie przejrzystego i spójnego wyglądu aplikacji.
+                Writing Tempo was a great adventure. It turned out to be a fun project that allowed me to get to know React.js and Node.js better. It was an interesting experience, especially since this is my second attempt to write this application, this time using React.js and Node.js. The earlier version ( <a href="https://github.com/Pawlaczenko/Tempo">source code</a> ) was written using self-configured webpack, HTML, SCSS and Javascript, and the next version was aimed at improving programming skills in React.js and adding a backend, which in the previous version of the application left much to be desired.
                 </p>
                 <p>
-                Następnie, skupiłem się na tworzeniu backendu w Node.js. Stworzyłem własne REST API, które umożliwia pobieranie tekstów piosenek z serwisu musixmatch, a także dostęp do okładek albumów oraz informacji o piosenkach.
+                First of all, I proceeded to thoroughly design the application. It went through many different iterations, and landed at using songs as the main theme of the app. I decided what the front-end would look like and what functionalities should be implemented. I decided to use styled-components, which is my favourite tool for styling in React. It was my first time working with the newset version of React Router, and it was a great opportunity to accomodate myself to the changes.
+                </p>
+                <p>
+                After this I proceeded to work on backend. I had my share of inconvienances while working with the Musixmatch API, since it wasn't as user-friendly as I expected. I wrote REST API for Tempo that allowed me to download song lyrics from musixmatch, as well as access album art and song information.
                 </p>
                 <img src="/projects/tempo/1.jpg" />
                 <p>
-                Jednym z największych wyzwań w pisaniu aplikacji Tempo było napisanie mechanizmu testu pisania. Musiałem wymyślić sposób, w jaki dawać użytkownikowi feedback dotyczący postępu w teście.
+                One of the biggest challenges in writing Tempo was coming up with an idea of how the typing test itself would work. I had to figure out a way to give the user feedback on the progress of the test.
                 </p>
                 <p>
-                Proces tworzenia aplikacji Tempo pozwolił mi na poznanie wielu nowych technologii i narzędzi, takich jak React Router w wersji v.6 czy Node.js oraz udoskonalenie umiejętnośći pisania reactowego kodu.
+                The process of creating Tempo allowed me to learn many new technologies and tools, such as React Router v.6 or Node.js, and it improved my React skills.
+                </p>
+            `
+        }
+    ],
+    [
+        "cafestreet",
+        {
+            photoPath: "miniature-cafestreet.jpg",
+            article: `
+                <p>
+                siemka
+                </p>
+            `
+        }
+    ],
+    [
+        "czytnik",
+        {
+            photoPath: "miniature-czytnik.jpg",
+            article: `
+                <p>
+                siemka
+                </p>
+            `
+        }
+    ],
+    [
+        "earthly",
+        {
+            photoPath: "miniature-earthly.png",
+            article: `
+                <p>
+                siemka
                 </p>
             `
         }

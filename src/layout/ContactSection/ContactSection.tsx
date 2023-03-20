@@ -11,12 +11,12 @@ const ContactSection : FC = () => {
   return (
     <Wrapper id="contact">
       <StyledContactSection>
-        <Heading><mark>skontaktuj</mark> się ze mną</Heading>
+        <Heading>let's be <mark>in touch</mark></Heading>
         <Form />
         <StyledContactInfo>
-          lub
-          <Paragraph><b>wyślij mi maila: </b><a href={`mailto:${PERSONAL_EMAIL}`}>{PERSONAL_EMAIL}</a></Paragraph>
-          <Paragraph><b>zadzwoń do mnie: </b><a href={`tel:${PERSONAL_PHONE_NUMBER}`}>{PERSONAL_PHONE_NUMBER}</a></Paragraph>
+          or
+          <Paragraph><b>send me an email: </b><a href={`mailto:${PERSONAL_EMAIL}`}>{PERSONAL_EMAIL}</a></Paragraph>
+          <Paragraph><b>call me: </b><a href={`tel:${PERSONAL_PHONE_NUMBER}`}>{PERSONAL_PHONE_NUMBER}</a></Paragraph>
         </StyledContactInfo>
       </StyledContactSection>
     </Wrapper>

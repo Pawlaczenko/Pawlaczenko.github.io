@@ -15,8 +15,10 @@ const HeroSection : FC = () => {
     <Wrapper>
       <StyledHeroSection variants={containerStagger} initial="hidden" animate="show">
         <StyledColumn>
-            <Heading variants={fadeInDirecion('x',-200)} primary>Siemka! Jestem Bartek. <br /><mark>Front-End Developer </mark></Heading>
-            <Paragraph variants={fadeInDirecion('x',-200)} grey>Skupiam się na tworzeniu stron internetowych, które nie tylko wyglądają dobrze, ale również działają sprawnie i szybko.</Paragraph>
+            <Heading variants={fadeInDirecion('x',-200)} primary>Howdy! I'm Bartek. <br /><mark>Front-End Developer </mark></Heading>
+            <Paragraph variants={fadeInDirecion('x',-200)} grey>
+              My primary goal lies in creating websites that have an aesthetically pleasing design and are fast and responsive. 
+            </Paragraph>
         </StyledColumn>
         <StyledColumn end>
             <BlackBox big variants={fadeInDirecion('x',200)} corners={[CornerPositions.TopLeft, CornerPositions.BottomRight]}>
