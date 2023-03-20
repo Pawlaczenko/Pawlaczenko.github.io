@@ -1,15 +1,17 @@
 import styled from 'styled-components';
 import { FC } from 'react';
 import { BREAKPOINTS } from '../../styles/variables';
+import { motion, Variants } from 'framer-motion';
 
 interface IProps {
     isOpen: boolean,
-    handleClick: React.MouseEventHandler 
+    handleClick: React.MouseEventHandler,
+    variants?: Variants
 }
 
-const Burger : FC<IProps> = ({isOpen, handleClick}) => {
+const Burger : FC<IProps> = ({isOpen, handleClick, variants}) => {
     return (
-        <StyledBurger isOpen={isOpen} onClick={handleClick}>
+        <StyledBurger variants={variants} isOpen={isOpen} onClick={handleClick}>
             <div></div>
             <div></div>
             <div></div>
@@ -17,7 +19,7 @@ const Burger : FC<IProps> = ({isOpen, handleClick}) => {
     )
 }
 
-const StyledBurger = styled.button<{isOpen:boolean}>`
+const StyledBurger = styled(motion.button)<{isOpen:boolean}>`
     --burger-gap: 3px;
     --burger-height: 4px;
     --burger-color: ${({theme}) => theme.body};

@@ -20,6 +20,7 @@ export interface ITechnology {
 
 export type TechnologyKey = 
     "react" |
+    "router" |
     "js"|
     "ts"|
     "sc"|
@@ -34,7 +35,7 @@ const TECHNOLOGIES = new Map<TechnologyKey, ITechnology>([
     [
         "react",
         {
-            name: "REACT",
+            name: "React.js",
             color: "#61DBFB",
             icon: <SiReact />
         }
@@ -104,6 +105,12 @@ const TECHNOLOGIES = new Map<TechnologyKey, ITechnology>([
         {
             name: "Sass",
             icon: <SiSass />
+        }
+    ],
+    [
+        "router",
+        {
+            name: "React Router v6",
         }
     ],
 ]) ;

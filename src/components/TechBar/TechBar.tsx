@@ -5,20 +5,13 @@ import { TechnologyKey } from '../../data/technologies';
 import TECHNOLOGIES from '../../data/technologies';
 import TechBubble from '../TechBubble/TechBubble';
 import { motion } from 'framer-motion';
+import { containerStagger } from '../../styles/animationVariants';
 
 interface ITechBarProps {
 	technologies: TechnologyKey[]
 }
-
-const container = {
-	show: {
-	  transition:{
-		staggerChildren: 0.2
-	  }
-	}
-  }
   
-  const item = {
+const item = {
 	hidden:{
 	  x: -25,
 	  rotate: 180,
@@ -37,7 +30,7 @@ const TechBar : FC<ITechBarProps> = ({technologies}) => {
     return <TechBubble name={tech?.name || ""} color={tech?.color} icon={tech?.icon} variants={item} key={index} />;
   }
   return (
-    <TechsList variants={container} initial="hidden" whileInView="show" viewport={{ once: true }}>
+    <TechsList variants={containerStagger} initial="hidden" whileInView="show" viewport={{ once: true }}>
 		{
 			technologies.map((tech,index) => getTechItem(tech,index))
 		}

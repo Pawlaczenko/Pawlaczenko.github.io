@@ -2,7 +2,7 @@ import React from 'react'
 import { IProject } from '../../data/projects';
 import { FC } from 'react';
 import styled from 'styled-components';
-import BlackBox, { StyledBox } from '../BlackBox/BlackBox';
+import { BlackBoxLink, StyledBox } from '../BlackBox/BlackBox';
 import { CornerPositions } from '../BlackBox/Corner';
 import TechnologiesList from './TechnologiesList';
 import Button from '../Button/Button';
@@ -21,12 +21,12 @@ const ProjectItem : FC<IProjectItem> = ({index,project,variants}) => {
 
     return (
     <StyledProjectItem variants={variants} isLeft={isLeft}>
-        <BlackBox corners={[cornerPosition]}>{project.name}</BlackBox>
+        <BlackBoxLink id={project.id} corners={[cornerPosition]}>{project.name}</BlackBoxLink>
         <StyledProjectInfo>
             <StyledProjectDescription isLeft={isLeft}>
                 {project.shortDescription}
             </StyledProjectDescription>
-            <TechnologiesList isLeft={isLeft} technologies={project.technologies} />
+            <TechnologiesList isLeft={isLeft} technologies={project.technologies.slice(0,3)} />
             <StyledButtonsWrapper isLeft={isLeft}>
                 <Button as="a" href={project.githubLink} target="_blank">github</Button>
                 {project.liveLink && <Button as="a" href={project.liveLink} target="_blank">live</Button>}

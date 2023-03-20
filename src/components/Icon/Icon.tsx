@@ -4,8 +4,6 @@ import { BREAKPOINTS } from '../../styles/variables';
 
 const StyledIcon = styled(motion.figure)<{fillColor?:string}>`
   & > svg {
-    --icon-size: 3rem;
-
     width: var(--icon-size);
     height: var(--icon-size);
     fill: ${(props) => props.fillColor || props.theme.text};

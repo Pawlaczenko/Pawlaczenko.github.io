@@ -4,6 +4,7 @@ import { motion, Variants } from 'framer-motion';
 import { flexCenter } from '../../styles/mixins';
 import Corner from './Corner';
 import { CornerPositions } from './Corner';
+import { Link } from 'react-router-dom';
 
 interface IBlackBoxProps {
     big?: boolean,
@@ -12,8 +13,6 @@ interface IBlackBoxProps {
     variants?: Variants
 }
 
-//initial={{scale: 0, opacity:0}} animate={{scale: 1,opacity:1, transition:{ease:"easeInOut",duration:1.6}}}
-
 const BlackBox : FC<IBlackBoxProps> = ({big, corners,children,variants}) => {
   return (
     <StyledBox big={big} variants={variants}>
@@ -21,6 +20,24 @@ const BlackBox : FC<IBlackBoxProps> = ({big, corners,children,variants}) => {
           corners.map((corner,index) => <Corner big={big} position={corner} key={index} />)
         }
         {children}
+    </StyledBox>
+  )
+}
+
+interface IBlackBoxLinkProps {
+  corners: Array<CornerPositions>,
+  children: React.ReactNode,
+  variants?: Variants,
+  id: string
+}
+
+export const BlackBoxLink : FC<IBlackBoxLinkProps> = ({corners,children,variants,id}) => {
+  return (
+    <StyledBox as={motion(Link)} variants={variants} to={"/project/"+id} big={false}>
+      {
+        corners.map((corner,index) => <Corner big={false} position={corner} key={index} />)
+      }
+      {children}
     </StyledBox>
   )
 }

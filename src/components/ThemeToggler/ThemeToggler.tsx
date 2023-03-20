@@ -10,9 +10,7 @@ const ThemeToggler : FC<{variants?:Variants}> = ({variants}) => {
   const Icon = themeName === "light" ? FiMoon : FiSun;
   return (
     <StyledToggleButton variants={variants} onClick={toggleTheme}>
-      <StyledThemeToggler 
-        whileTap={{y:"80%"}}
-      >
+      <StyledThemeToggler whileTap={{y:"80%"}}>
         <Icon />
       </StyledThemeToggler>
     </StyledToggleButton>

@@ -5,34 +5,16 @@ import StyledSection from '../Section/Section';
 import PROJECTS from '../../data/projects';
 import ProjectItem from '../../components/ProjectItem/ProjectItem';
 import { motion } from 'framer-motion';
-
-const container = {
-  show: {
-    transition:{
-      staggerChildren: 0.5
-    }
-  }
-}
-
-const item = {
-  hidden:{
-    y: -10,
-    opacity: 0
-  },
-  show:{
-    y: 0,
-    opacity: 1
-  }
-}
+import { containerStagger, fadeInDirecion } from '../../styles/animationVariants';
 
 const ProjectsSection : FC = () => {
   return (
     <Wrapper id="projects">
       <StyledProjectsSection>
         <Heading withDecoration><mark>moje</mark> projekty</Heading>
-        <StyledProjectsList variants={container} initial="hidden" whileInView="show" viewport={{ once: true }}>
+        <StyledProjectsList variants={containerStagger} initial="hidden" whileInView="show" viewport={{ once: true }}>
           {
-            PROJECTS.map((project, index) => <ProjectItem index={index} project={project} key={index} variants={item}/>)
+            PROJECTS.map((project, index) => <ProjectItem index={index} project={project} key={index} variants={fadeInDirecion("y",-25,.5)}/>)
           }
         </StyledProjectsList>
       </StyledProjectsSection>

@@ -7,43 +7,19 @@ import Paragraph from '../../components/Paragraph/Paragraph';
 import StyledSection from '../Section/Section';
 import { IoGlassesOutline } from "react-icons/io5";
 import { BREAKPOINTS } from '../../styles/variables';
-import { easeInOut, motion, Variants } from 'framer-motion';
-
-const container = {
-  show: {
-    transition: {
-      staggerChildren: 0.2
-    }
-  }
-}
-
-const fadeInDirecion = (direction?: boolean) : Variants => {
-  return {
-    hidden: {
-      opacity: 0,
-      x: 200 * (direction?1:-1)
-    },
-    show: {
-      opacity: 1,
-      x: 0,
-      transition: {
-        ease: "easeInOut",
-        duration: 1.6
-      }
-    }
-  }
-}
+import { motion } from 'framer-motion';
+import { containerStagger, fadeInDirecion } from '../../styles/animationVariants';
 
 const HeroSection : FC = () => {
   return (
     <Wrapper>
-      <StyledHeroSection variants={container} initial="hidden" animate="show">
+      <StyledHeroSection variants={containerStagger} initial="hidden" animate="show">
         <StyledColumn>
-            <Heading variants={fadeInDirecion()} primary>Siemka! Jestem Bartek. <br /><mark>Front-End Developer </mark></Heading>
-            <Paragraph variants={fadeInDirecion()} grey>Skupiam się na tworzeniu stron internetowych, które nie tylko wyglądają dobrze, ale również działają sprawnie i szybko.</Paragraph>
+            <Heading variants={fadeInDirecion('x',-200)} primary>Siemka! Jestem Bartek. <br /><mark>Front-End Developer </mark></Heading>
+            <Paragraph variants={fadeInDirecion('x',-200)} grey>Skupiam się na tworzeniu stron internetowych, które nie tylko wyglądają dobrze, ale również działają sprawnie i szybko.</Paragraph>
         </StyledColumn>
         <StyledColumn end>
-            <BlackBox big variants={fadeInDirecion(true)} corners={[CornerPositions.TopLeft, CornerPositions.BottomRight]}>
+            <BlackBox big variants={fadeInDirecion('x',200)} corners={[CornerPositions.TopLeft, CornerPositions.BottomRight]}>
               <IoGlassesOutline />
             </BlackBox>
         </StyledColumn>
@@ -77,7 +53,7 @@ const StyledColumn = styled(motion.div)<{end?: boolean}>`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  ${(props) => props.end && "align-items: flex-end"};
+  align-items: ${(props) => props.end ? "flex-end" : "flex-start"};
   & > ${Paragraph} {
     margin-top: 2rem;
     width: 80%;

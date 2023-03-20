@@ -43,6 +43,7 @@ export const variables = css`
 
         // SPACES
         --website-width: 120rem;
+        --icon-size: 3rem;
 
         @media only screen and (${BREAKPOINTS.large}) {
             --fs-heading: 4rem;

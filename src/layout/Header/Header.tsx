@@ -4,34 +4,30 @@ import GithubIcon, { StyledGithubIcon } from '../../components/GithubIcon/Github
 import ThemeToggler, { StyledToggleButton } from '../../components/ThemeToggler/ThemeToggler';
 import { flexSpaceBetween } from '../../styles/mixins';
 import StyledSection from '../Section/Section';
-import Navigation, { StyledNavigation } from './Navigation';
+import Navigation from './Navigation';
 import { useState, useEffect } from 'react';
 import Burger from '../../components/Burger/Burger';
 import { useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
-
-const container = {
-  show: {
-    transition: {
-      staggerChildren: 0.25
-    }
-  }
-}
-
-const item = {
-  hidden: {
-    y: -20,
-    opacity: 0
-  },
-  show: {
-    y: 0,
-    opacity: 1
-  }
-}
+import useMediaQuery from '../../hooks/useMediaQuery';
+import { BREAKPOINTS } from '../../styles/variables';
+import BackIcon from '../../components/BackIcon/BackIcon';
+import { fadeInDirecion, containerStagger } from '../../styles/animationVariants';
 
 const Header : FC = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const location = useLocation();
+  const isBurgerVisible = useMediaQuery(`(${BREAKPOINTS.navigation})`);
+  
+  const item = fadeInDirecion("y",-20);
+
+  const showMobileControls = () => {
+    if(location.pathname==="/"){
+      return <Burger isOpen={isOpen} handleClick={()=>setIsOpen(!isOpen)} variants={item}/>
+    } else if(isBurgerVisible) {
+      return <BackIcon variants={item} />
+    }
+  }
 
   useEffect(()=>{
     setIsOpen(false);
@@ -39,11 +35,11 @@ const Header : FC = () => {
   
   return (
     <Wrapper as={"header"}>
-      <StyledHeader variants={container} animate="show" initial="hidden">
+      <StyledHeader variants={containerStagger} animate="show" initial="hidden">
         <Navigation variants={item} isOpen={isOpen} />
         <ThemeToggler variants={item} />
         <GithubIcon variants={item} />
-        <Burger isOpen={isOpen} handleClick={()=>setIsOpen(!isOpen)} />
+        {showMobileControls()}
       </StyledHeader>
     </Wrapper>
   )
@@ -59,7 +55,7 @@ const StyledHeader = styled(motion.div)`
 
   & > ${StyledToggleButton} {
     position: absolute;
-    left: calc(45%);
+    left: calc(50% - var(--icon-size));
   }
 
 `;
