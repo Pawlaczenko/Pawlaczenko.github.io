@@ -2,29 +2,31 @@ import React from 'react'
 import { IProject } from '../../data/projects';
 import { FC } from 'react';
 import styled from 'styled-components';
-import BlackBox, { StyledBox } from '../BlackBox/BlackBox';
+import { BlackBoxLink, StyledBox } from '../BlackBox/BlackBox';
 import { CornerPositions } from '../BlackBox/Corner';
 import TechnologiesList from './TechnologiesList';
 import Button from '../Button/Button';
 import { BREAKPOINTS } from '../../styles/variables';
+import { motion, Variants } from 'framer-motion';
 
 interface IProjectItem {
     index: number,
-    project: IProject
+    project: IProject,
+    variants?: Variants
 }
 
-const ProjectItem : FC<IProjectItem> = ({index,project}) => {
+const ProjectItem : FC<IProjectItem> = ({index,project,variants}) => {
     const isLeft : boolean = index % 2 === 0;
     const cornerPosition : CornerPositions = isLeft ? CornerPositions.TopLeft : CornerPositions.TopRight;
 
     return (
-    <StyledProjectItem isLeft={isLeft}>
-        <BlackBox corners={[cornerPosition]}>{project.name}</BlackBox>
+    <StyledProjectItem variants={variants} isLeft={isLeft}>
+        <BlackBoxLink id={project.id} corners={[cornerPosition]}>{project.name}</BlackBoxLink>
         <StyledProjectInfo>
             <StyledProjectDescription isLeft={isLeft}>
                 {project.shortDescription}
             </StyledProjectDescription>
-            <TechnologiesList isLeft={isLeft} technologies={project.technologies} />
+            <TechnologiesList isLeft={isLeft} technologies={project.technologies.slice(0,3)} />
             <StyledButtonsWrapper isLeft={isLeft}>
                 <Button as="a" href={project.githubLink} target="_blank">github</Button>
                 {project.liveLink && <Button as="a" href={project.liveLink} target="_blank">live</Button>}
@@ -34,7 +36,7 @@ const ProjectItem : FC<IProjectItem> = ({index,project}) => {
   )
 }
 
-const StyledProjectItem = styled.li<{isLeft: boolean}>`
+const StyledProjectItem = styled(motion.li)<{isLeft: boolean,variants?:Variants}>`
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;

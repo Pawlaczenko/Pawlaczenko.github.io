@@ -7,17 +7,19 @@ import Paragraph from '../../components/Paragraph/Paragraph';
 import StyledSection from '../Section/Section';
 import { IoGlassesOutline } from "react-icons/io5";
 import { BREAKPOINTS } from '../../styles/variables';
+import { motion } from 'framer-motion';
+import { containerStagger, fadeInDirecion } from '../../styles/animationVariants';
 
 const HeroSection : FC = () => {
   return (
     <Wrapper>
-      <StyledHeroSection>
+      <StyledHeroSection variants={containerStagger} initial="hidden" animate="show">
         <StyledColumn>
-            <Heading primary>Siemka! Jestem Bartek. <br /><mark>Front-End Developer </mark></Heading>
-            <Paragraph grey>Skupiam się na tworzeniu stron internetowych, które nie tylko wyglądają dobrze, ale również działają sprawnie i szybko.</Paragraph>
+            <Heading variants={fadeInDirecion('x',-200)} primary>Siemka! Jestem Bartek. <br /><mark>Front-End Developer </mark></Heading>
+            <Paragraph variants={fadeInDirecion('x',-200)} grey>Skupiam się na tworzeniu stron internetowych, które nie tylko wyglądają dobrze, ale również działają sprawnie i szybko.</Paragraph>
         </StyledColumn>
         <StyledColumn end>
-            <BlackBox big corners={[CornerPositions.TopLeft, CornerPositions.BottomRight]}>
+            <BlackBox big variants={fadeInDirecion('x',200)} corners={[CornerPositions.TopLeft, CornerPositions.BottomRight]}>
               <IoGlassesOutline />
             </BlackBox>
         </StyledColumn>
@@ -34,7 +36,7 @@ const Wrapper = styled(StyledSection)`
   }
 `;
 
-const StyledHeroSection = styled.div`
+const StyledHeroSection = styled(motion.div)`
   display: grid;
   grid-template-columns: 55% 45%;
   align-items: center;
@@ -47,11 +49,11 @@ const StyledHeroSection = styled.div`
   }
 `;
 
-const StyledColumn = styled.div<{end?: boolean}>`
+const StyledColumn = styled(motion.div)<{end?: boolean}>`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  ${(props) => props.end && "align-items: flex-end"};
+  align-items: ${(props) => props.end ? "flex-end" : "flex-start"};
   & > ${Paragraph} {
     margin-top: 2rem;
     width: 80%;

@@ -4,17 +4,19 @@ import Heading,{StyledHeading} from '../../components/Heading/Heading';
 import StyledSection from '../Section/Section';
 import PROJECTS from '../../data/projects';
 import ProjectItem from '../../components/ProjectItem/ProjectItem';
+import { motion } from 'framer-motion';
+import { containerStagger, fadeInDirecion } from '../../styles/animationVariants';
 
 const ProjectsSection : FC = () => {
   return (
     <Wrapper id="projects">
       <StyledProjectsSection>
-            <Heading withDecoration><mark>moje</mark> projekty</Heading>
-            <StyledProjectsList>
-              {
-                PROJECTS.map((project, index) => <ProjectItem index={index} project={project} key={index}/>)
-              }
-            </StyledProjectsList>
+        <Heading withDecoration><mark>moje</mark> projekty</Heading>
+        <StyledProjectsList variants={containerStagger} initial="hidden" whileInView="show" viewport={{ once: true }}>
+          {
+            PROJECTS.map((project, index) => <ProjectItem index={index} project={project} key={index} variants={fadeInDirecion("y",-25,.5)}/>)
+          }
+        </StyledProjectsList>
       </StyledProjectsSection>
     </Wrapper>
   )
@@ -28,7 +30,7 @@ const StyledProjectsSection = styled.div`
 
 `;
 
-const StyledProjectsList = styled.ul`
+const StyledProjectsList = styled(motion.ul)`
   list-style-type: none;
   padding: 0;
   margin-top: 12rem;

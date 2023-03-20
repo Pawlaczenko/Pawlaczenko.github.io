@@ -17,7 +17,7 @@ const Form : FC = () => {
   
   return (
     <StyledForm method="POST" onSubmit={handleSubmit}>
-        {state.submitting && <Loader />}
+        {state.submitting && <Loader isAbsolute={true} />}
         {state.succeeded ? 
           <SuccessWindow /> :
           <>

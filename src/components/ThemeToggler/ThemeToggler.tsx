@@ -3,23 +3,21 @@ import { FiSun, FiMoon } from "react-icons/fi";
 import StyledIcon from '../Icon/Icon';
 import { useThemeContext } from '../../context/ThemeContext';
 import styled from 'styled-components';
-import { motion } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 
-const ThemeToggler : FC = () => {
+const ThemeToggler : FC<{variants?:Variants}> = ({variants}) => {
   const {themeName, toggleTheme} = useThemeContext();
   const Icon = themeName === "light" ? FiMoon : FiSun;
   return (
-    <StyledToggleButton onClick={toggleTheme}>
-      <StyledThemeToggler 
-        whileTap={{y:"80%"}}
-      >
+    <StyledToggleButton variants={variants} onClick={toggleTheme}>
+      <StyledThemeToggler whileTap={{y:"80%"}}>
         <Icon />
       </StyledThemeToggler>
     </StyledToggleButton>
   )
 }
 
-export const StyledToggleButton = styled.button`
+export const StyledToggleButton = styled(motion.button)`
     background: unset;
     color: unset;
     border: none;

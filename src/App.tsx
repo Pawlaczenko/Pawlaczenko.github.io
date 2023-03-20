@@ -39,6 +39,10 @@ const StyledAppWrapper = styled.div`
   background: 
     url(${orb}) top -20vw left -20vw / 60vw no-repeat,
     url(${orb}) top -20vw right -20vw / 50vw no-repeat;
+  
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 `;
 
 export default App
