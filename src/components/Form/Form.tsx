@@ -21,11 +21,11 @@ const Form : FC = () => {
         {state.succeeded ? 
           <SuccessWindow /> :
           <>
-            <FormInput type='text' placeholder='Twoje Imię' isRequired={true} name="name" errors={getErrors("name")} />
-            <FormInput type='email' placeholder='Twój Email' isRequired={true} name="email" errors={getErrors("email")} />
-            <FormInput type='tel' placeholder='Twój Numer Telefonu' isRequired={false} name="phone" errors={getErrors("phone")} />
-            <FormInput placeholder='Twoja Wiadomość' isRequired={true} displayAs="textarea" name="message" errors={getErrors("message")} />
-            <Button type="submit" disabled={state.submitting}>wyślij</Button>
+            <FormInput type='text' placeholder='Your name' isRequired={true} name="name" errors={getErrors("name")} />
+            <FormInput type='email' placeholder='Your email' isRequired={true} name="email" errors={getErrors("email")} />
+            <FormInput type='tel' placeholder='Your phone number' isRequired={false} name="phone" errors={getErrors("phone")} />
+            <FormInput placeholder='Your message' isRequired={true} displayAs="textarea" name="message" errors={getErrors("message")} />
+            <Button type="submit" disabled={state.submitting}>send</Button>
           </>
         }
     </StyledForm>

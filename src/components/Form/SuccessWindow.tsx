@@ -10,8 +10,8 @@ const SuccessWindow : FC = () => {
         <Corner position={CornerPositions.TopLeft} big />
         <Corner position={CornerPositions.BottomRight} big />
         <Paragraph>
-            Wiadomość została wysłana.<br/>
-            <b>Dzięki!</b>
+            Your messange has been sent.<br/>
+            <b>Thank you!</b>
         </Paragraph>
     </StyledSuccessMessage>
   )

@@ -7,9 +7,9 @@ import { BREAKPOINTS } from '../../styles/variables';
 
 const Navigation : FC<{isOpen: boolean,variants?:Variants}> = ({isOpen,variants}) => {
   const links : {name:string,id:string}[] = [
-    {id: "#projects", name: "Projekty"},
-    {id: "#about", name: "O mnie"},
-    {id: "#contact", name: "Kontakt"}
+    {id: "#projects", name: "Projects"},
+    {id: "#about", name: "About me"},
+    {id: "#contact", name: "Contact"}
   ];
 
   const location = useLocation();

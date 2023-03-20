@@ -15,6 +15,7 @@ import { BREAKPOINTS } from '../styles/variables';
 import Loader from '../components/Loader/Loader';
 import { motion } from 'framer-motion';
 import { containerStagger, fadeInDirecion } from '../styles/animationVariants';
+import { BleedOptions } from '../layout/Section/Section';
 
 interface IProjectPage {
   projectInfo: IProject,
@@ -57,7 +58,7 @@ const ProjectPage : FC = () => {
             {projectData.projectInfo.shortDescription}
           </Paragraph>
           <StyledMiniature variants={item}>
-            <img src={"/projects/tempo/"+projectData.article.photoPath} alt={projectData.projectInfo.name + " image"} />
+            <StyledPhoto photo={`/projects/${projectData.projectInfo.id}/${projectData.article.photoPath}`} />
           </StyledMiniature>
           <StyledTechsWrapper variants={item}>
             {
@@ -97,28 +98,46 @@ const StyledProjectPage = styled(motion.div)`
 `;
 
 const StyledMiniature = styled(motion.figure)`
-  width: 75%;
-  margin: 0 auto;
-  margin-bottom: 3rem;
   position: relative;
-  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.2);
-
-  @media only screen and (${BREAKPOINTS.navigation}) {
-    width: 100%;
-  }
 
   &::before {
     content: "";
     display: block;
 
     position: absolute;
-    left: -50vw;
+    left: -100vw;
     top: 45%;
-    z-index: -1;
+    z-index: -2;
+    transform: translateZ(0);
 
     background: var(--gradient-orange-radial);
     width: 200vw;
     height: 7rem;
+  }
+`;
+
+
+const StyledPhoto = styled.figure<{photo: string}>`
+  width: 75%;
+  aspect-ratio: 2/1;
+  margin: 3rem auto;
+  position: relative;
+  
+  border-radius: 5rem;
+  background:
+    url(${(props) => props.photo}) center no-repeat,
+    var(--color-light);
+  background-size: cover;
+
+  box-shadow: 
+    -1.1rem -1.1rem 0 0 var(--color-orange-2),
+    -1.1rem 1.1rem 0 0 var(--color-orange-3),
+    1.1rem -1.1rem 0 0 var(--color-orange-1),
+    1.1rem 1.1rem 0 0 var(--color-orange-4),
+    0px 0px 1.8rem 0px rgba(0, 0, 0, 0.2);
+
+  @media only screen and (${BREAKPOINTS.navigation}) {
+    width: 100%;
   }
 `;
 
@@ -152,8 +171,13 @@ const StyledArticle = styled(motion.article)`
   }
 
   & > p {
-    text-align: left;
+    text-align: justify;
     margin: 1rem 0;
+    line-height: 1.5;
+
+    b{
+      font-weight: var(--fw-bold);
+    }
   }
 
   & a {
@@ -163,6 +187,7 @@ const StyledArticle = styled(motion.article)`
 
   & > img {
     margin: 2.5rem auto;
+    box-shadow: 0px 1px 3px rgba(0,0,0,0.2);
   }
 `;
 

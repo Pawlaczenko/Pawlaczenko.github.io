@@ -11,7 +11,7 @@ const ProjectsSection : FC = () => {
   return (
     <Wrapper id="projects">
       <StyledProjectsSection>
-        <Heading withDecoration><mark>moje</mark> projekty</Heading>
+        <Heading withDecoration><mark>Behold</mark> my stuff!</Heading>
         <StyledProjectsList variants={containerStagger} initial="hidden" whileInView="show" viewport={{ once: true }}>
           {
             PROJECTS.map((project, index) => <ProjectItem index={index} project={project} key={index} variants={fadeInDirecion("y",-25,.5)}/>)
