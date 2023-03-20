@@ -173,6 +173,11 @@ const StyledArticle = styled(motion.article)`
   & > p {
     text-align: justify;
     margin: 1rem 0;
+    line-height: 1.5;
+
+    b{
+      font-weight: var(--fw-bold);
+    }
   }
 
   & a {
@@ -182,6 +187,7 @@ const StyledArticle = styled(motion.article)`
 
   & > img {
     margin: 2.5rem auto;
+    box-shadow: 0px 1px 3px rgba(0,0,0,0.2);
   }
 `;
 
