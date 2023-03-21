@@ -7,17 +7,17 @@ import { CornerPositions } from './Corner';
 import { Link } from 'react-router-dom';
 
 interface IBlackBoxProps {
-    big?: boolean,
+    isPrimary?: boolean,
     corners: Array<CornerPositions>,
     children: React.ReactNode,
     variants?: Variants
 }
 
-const BlackBox : FC<IBlackBoxProps> = ({big, corners,children,variants}) => {
+const BlackBox : FC<IBlackBoxProps> = ({isPrimary, corners,children,variants}) => {
   return (
-    <StyledBox big={big} variants={variants}>
+    <StyledBox isPrimary={isPrimary} variants={variants}>
         {
-          corners.map((corner,index) => <Corner big={big} position={corner} key={index} />)
+          corners.map((corner,index) => <Corner isPrimary={isPrimary} position={corner} key={index} />)
         }
         {children}
     </StyledBox>
@@ -33,22 +33,22 @@ interface IBlackBoxLinkProps {
 
 export const BlackBoxLink : FC<IBlackBoxLinkProps> = ({corners,children,variants,id}) => {
   return (
-    <StyledBox as={motion(Link)} variants={variants} to={"/project/"+id} big={false}>
+    <StyledBox as={motion(Link)} to={"/project/"+id} variants={variants}>
       {
-        corners.map((corner,index) => <Corner big={false} position={corner} key={index} />)
+        corners.map((corner,index) => <Corner isPrimary={false} position={corner} key={index} />)
       }
       {children}
     </StyledBox>
   )
 }
 
-export const StyledBox = styled(motion.figure)<{big?: boolean}>`
-    --box-size: ${(props) => props.big ? "50rem" : "20.8rem"};
+export const StyledBox = styled(motion.figure)<{isPrimary?: boolean}>`
+    --box-size: ${(props) => props.isPrimary ? "50rem" : "20.8rem"};
     --min-box-size: 50vw;
     
     background-color: ${({theme}) => theme.box};
     color: ${({theme}) => theme.accents};
-    border-radius: ${(props) => props.big ? "3.6rem" : "1.8rem"};
+    border-radius: ${(props) => props.isPrimary ? "3.6rem" : "1.8rem"};
 
     width: min(var(--min-box-size), var(--box-size));
     height: min(var(--min-box-size),var(--box-size));

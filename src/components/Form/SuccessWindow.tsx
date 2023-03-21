@@ -7,8 +7,8 @@ import Paragraph from '../Paragraph/Paragraph';
 const SuccessWindow : FC = () => {
   return (
     <StyledSuccessMessage>
-        <Corner position={CornerPositions.TopLeft} big />
-        <Corner position={CornerPositions.BottomRight} big />
+        <Corner position={CornerPositions.TopLeft} isPrimary />
+        <Corner position={CornerPositions.BottomRight} isPrimary />
         <Paragraph>
             Your messange has been sent.<br/>
             <b>Thank you!</b>

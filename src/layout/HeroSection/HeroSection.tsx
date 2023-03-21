@@ -20,8 +20,8 @@ const HeroSection : FC = () => {
               My primary goal lies in creating websites that have an aesthetically pleasing design and are fast and responsive. 
             </Paragraph>
         </StyledColumn>
-        <StyledColumn end>
-            <BlackBox big variants={fadeInDirecion('x',200)} corners={[CornerPositions.TopLeft, CornerPositions.BottomRight]}>
+        <StyledColumn isPrimary>
+            <BlackBox isPrimary variants={fadeInDirecion('x',200)} corners={[CornerPositions.TopLeft, CornerPositions.BottomRight]}>
               <IoGlassesOutline />
             </BlackBox>
         </StyledColumn>
@@ -51,11 +51,11 @@ const StyledHeroSection = styled(motion.div)`
   }
 `;
 
-const StyledColumn = styled(motion.div)<{end?: boolean}>`
+const StyledColumn = styled(motion.div)<{isPrimary?: boolean}>`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: ${(props) => props.end ? "flex-end" : "flex-start"};
+  align-items: ${(props) => props.isPrimary ? "flex-end" : "flex-start"};
   & > ${Paragraph} {
     margin-top: 2rem;
     width: 80%;

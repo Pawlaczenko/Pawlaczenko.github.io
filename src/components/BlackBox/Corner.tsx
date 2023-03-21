@@ -11,7 +11,7 @@ export enum CornerPositions {
 
 interface ICornerProps {
   position: CornerPositions,
-  big?: boolean
+  isPrimary?: boolean
 }
 
 const bigPath : string = "M30 150V37C30 33.134 33.134 30 37 30H150";
@@ -26,13 +26,13 @@ const cornerPath = {
     }
 }
 
-const Corner : FC<ICornerProps> = ({position,big}) => {  
-  const strokeWidth = big ? 60 : 32;
-  const cornerSize = big ? 180 : 82;
-  const dPath = big ? bigPath : smallPath;
+const Corner : FC<ICornerProps> = ({position,isPrimary}) => {  
+  const strokeWidth = isPrimary ? 60 : 32;
+  const cornerSize = isPrimary ? 180 : 82;
+  const dPath = isPrimary ? bigPath : smallPath;
 
   return (
-    <StyledCornerPositioner big={big} rotate={position}>
+    <StyledCornerPositioner isPrimary={isPrimary} rotate={position}>
         <StyledCorner width={cornerSize} height={cornerSize} viewBox={`0 0 ${cornerSize} ${cornerSize}`} fill="none" xmlns="http://www.w3.org/2000/svg">
             <motion.path 
                 d={dPath} 
@@ -57,12 +57,12 @@ const Corner : FC<ICornerProps> = ({position,big}) => {
 
 interface IStyledCornerProps {
     rotate: string,
-    big?: boolean
+    isPrimary?: boolean
 }
 
 const StyledCornerPositioner = styled.div<IStyledCornerProps>`
     --corner-size: 35%;
-    --corner-offset: ${(props) => props.big ? "-5%" : "-6%"};
+    --corner-offset: ${(props) => props.isPrimary ? "-5%" : "-6%"};
     
     transform: rotate(${(props) => props.rotate});
     width: var(--corner-size); 
