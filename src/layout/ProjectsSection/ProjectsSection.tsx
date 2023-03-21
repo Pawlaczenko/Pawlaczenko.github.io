@@ -1,6 +1,6 @@
 import { FC } from 'react'
 import styled from 'styled-components';
-import Heading,{StyledHeading} from '../../components/Heading/Heading';
+import Heading from '../../components/Heading/Heading';
 import StyledSection from '../Section/Section';
 import PROJECTS from '../../data/projects';
 import ProjectItem from '../../components/ProjectItem/ProjectItem';

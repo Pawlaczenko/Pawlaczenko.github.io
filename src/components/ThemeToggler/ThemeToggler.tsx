@@ -9,7 +9,7 @@ const ThemeToggler : FC<{variants?:Variants}> = ({variants}) => {
   const {themeName, toggleTheme} = useThemeContext();
   const Icon = themeName === "light" ? FiMoon : FiSun;
   return (
-    <StyledToggleButton variants={variants} onClick={toggleTheme}>
+    <StyledToggleButton id="theme-button" variants={variants} onClick={toggleTheme} aria-label="Toggle Theme Button">
       <StyledThemeToggler whileTap={{y:"80%"}}>
         <Icon />
       </StyledThemeToggler>
