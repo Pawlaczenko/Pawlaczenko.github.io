@@ -4,7 +4,7 @@ import Form from '../../components/Form/Form';
 import Heading, { StyledHeading } from '../../components/Heading/Heading';
 import Paragraph from '../../components/Paragraph/Paragraph';
 import StyledSection from '../Section/Section';
-import { PERSONAL_EMAIL, PERSONAL_PHONE_NUMBER } from '../../data/links';
+import { PERSONAL_EMAIL } from '../../data/links';
 import ContactImage from "../../assets/contact_background.svg";
 
 const ContactSection : FC = () => {
@@ -16,7 +16,6 @@ const ContactSection : FC = () => {
         <StyledContactInfo>
           or
           <Paragraph><b>send me an email: </b><a href={`mailto:${PERSONAL_EMAIL}`}>{PERSONAL_EMAIL}</a></Paragraph>
-          <Paragraph><b>call me: </b><a href={`tel:${PERSONAL_PHONE_NUMBER}`}>{PERSONAL_PHONE_NUMBER}</a></Paragraph>
         </StyledContactInfo>
       </StyledContactSection>
     </Wrapper>

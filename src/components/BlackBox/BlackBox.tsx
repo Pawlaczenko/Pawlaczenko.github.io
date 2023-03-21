@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { motion, Variants } from 'framer-motion';
 import { flexCenter } from '../../styles/mixins';
 import Corner from './Corner';
@@ -42,6 +42,14 @@ export const BlackBoxLink : FC<IBlackBoxLinkProps> = ({corners,children,variants
   )
 }
 
+const LinkBoxHover = css`
+  transition: background .4s ease-in-out;
+  &:hover {
+    background: var(--gradient-orange);
+    color: var(--color-black);
+  }
+`;
+
 export const StyledBox = styled(motion.figure)<{isPrimary?: boolean}>`
     --box-size: ${(props) => props.isPrimary ? "50rem" : "20.8rem"};
     --min-box-size: 50vw;
@@ -63,12 +71,7 @@ export const StyledBox = styled(motion.figure)<{isPrimary?: boolean}>`
     }
 
     font-size: var(--fs-subheading);
-
-    transition: background .4s ease-in-out;
-    &:hover {
-      background: var(--gradient-orange);
-      color: var(--color-black);
-    }
+    ${(props) => !props.isPrimary && LinkBoxHover};
 `;
 
 export default BlackBox
