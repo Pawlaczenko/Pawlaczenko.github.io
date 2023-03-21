@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom"
 import { ThemeProvider } from "styled-components";
 import Footer from "./layout/Footer/Footer"

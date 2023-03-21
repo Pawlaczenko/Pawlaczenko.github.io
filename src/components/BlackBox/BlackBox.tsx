@@ -46,7 +46,7 @@ export const StyledBox = styled(motion.figure)<{isPrimary?: boolean}>`
     --box-size: ${(props) => props.isPrimary ? "50rem" : "20.8rem"};
     --min-box-size: 50vw;
     
-    background-color: ${({theme}) => theme.box};
+    background: ${({theme}) => theme.box};
     color: ${({theme}) => theme.accents};
     border-radius: ${(props) => props.isPrimary ? "3.6rem" : "1.8rem"};
 
@@ -63,6 +63,12 @@ export const StyledBox = styled(motion.figure)<{isPrimary?: boolean}>`
     }
 
     font-size: var(--fs-subheading);
+
+    transition: background .4s ease-in-out;
+    &:hover {
+      background: var(--gradient-orange);
+      color: var(--color-black);
+    }
 `;
 
 export default BlackBox

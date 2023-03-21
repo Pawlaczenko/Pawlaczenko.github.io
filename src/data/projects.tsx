@@ -80,7 +80,7 @@ export const PROJECTS_ARTICLES = new Map<string,IProjectArticle>([
             <p>Creating a landing page for Cafe Street was a fantastic experience for me. I used <b>React</b> with <b>styled components</b> and <b>TypeScript</b> to build the website, and it was my first time using TypeScript. At the beginning of the project, I was focused on making the components as reusable and adaptable as possible. After a while, the building process felt like playing with blocks, and it was incredibly enjoyable.</p>
             <p>One of the things I loved about using React was the ability to create reusable components. By doing so, I saved myself a lot of time by reusing components throughout the website that could easily adapt to different use-cases or screen sizes.</p>
             <p>Using TypeScript was a new experience for me, and it was great to learn how to use it in combination with React. TypeScript allowed me to write more robust code, catch errors early on, and make the code more readable. I found the process of creating reusable components even more enjoyable with TypeScript because it helped me catch errors and make sure the components were working as expected.</p>
-            <img src="/projects/cafestreet/1.png" alt="CafeStreet screenshot" />
+            <img src="/projects/cafestreet/1.jpg" alt="CafeStreet screenshot" />
             <p>Overall, the process of building the Cafe Street landing page was a fantastic learning experience for me. I enjoyed using React, styled components, and TypeScript to create reusable and adaptable components, making the building process fun and enjoyable. I am excited to continue building projects with these technologies and exploring more ways to create.</p>
             `
         }
@@ -102,12 +102,12 @@ export const PROJECTS_ARTICLES = new Map<string,IProjectArticle>([
     [
         "earthly",
         {
-            photoPath: "miniature-earthly.png",
+            photoPath: "miniature-earthly.jpg",
             article: `
             <p>Developing a website requires careful planning and attention to detail. As a web developer and Applied Computer Science student, my task and goal was to create a landing page for an ecological organization using only plain <b>HTML</b>, <b>CSS</b>, and <b>JavaScript</b>, while making sure that the site was SEO-friendly and accessible to all users. This was a project that required me to stay true to the guidelines provided by my professor, which meant keeping things simple and avoiding any fancy technologies.</p>
             <p>The first step in the development process was to plan out the structure and content of the website. I researched similar ecological organizations to understand what content would be most relevant to users. I then created a wireframe to guide me as I began coding. </p>
             <p>Next, I focused on creating a well-organized and SEO-friendly HTML structure. I used semantic tags such as <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, and <code>&lt;main&gt;</code> to ensure that search engines could easily understand the content of the website. </p>
-            <img src="/projects/earthly/1.png" alt="Contact form on Earthly website."/>
+            <img src="/projects/earthly/1.jpg" alt="Contact form on Earthly website."/>
             <p>For the styling, I kept things simple and consistent. I used a color scheme that reflected the organization's mission and chose a readable font size and style. I also paid close attention to accessibility, ensuring that the website was easy to use for all users, including those with disabilities. </p>
             <p>Overall, creating this website required a balance between technical knowledge and creativity. I learned the importance of planning ahead, using semantic HTML, keeping things simple and accessible, and incorporating interactivity to enhance the user experience. </p>
             `
